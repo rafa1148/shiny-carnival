@@ -2,6 +2,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
+    console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL, 'Anon Key exists:', !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
     let response = NextResponse.next({
         request: {
             headers: request.headers,
